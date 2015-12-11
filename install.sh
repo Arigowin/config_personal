@@ -23,7 +23,7 @@ fi
 cd $CONFIG_VIM
 mkdir $CONFIG_VIM/tmp
 
-if [[ "$USER" != "geam" ]] && [[ "$USER" != "mdelage" ]]; then
+if [[ "$USER" != "Arigowin" ]] && [[ "$USER" != "dolewski" ]]; then
     # remove my git config if it's not me
     sed -i.back '/git/d' $PERS_PATH/ln
 fi
