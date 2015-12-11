@@ -20,8 +20,11 @@ git clone "git@$VIM_DEPOT" $CONFIG_VIM
 if [[ "$?" -ne 0 ]]; then
     git clone "https://$VIM_DEPOT" $CONFIG_VIM
 fi
-cd $CONFIG_VIM
-mkdir $CONFIG_VIM/tmp
+if [[ -e $CONFIG_VIM ]]; then
+    cd $CONFIG_VIM && \
+        mkdir $CONFIG_VIM/tmp && \
+        nvim +PlugInstall
+fi
 
 if [[ "$USER" != "Arigowin" ]] && [[ "$USER" != "dolewski" ]]; then
     # remove my git config if it's not me
