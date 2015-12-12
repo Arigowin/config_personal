@@ -9,7 +9,8 @@ alias g++f="g++ -Wall -Wextra -Werror"
 # Definition des alias
 alias purgevim="rm -f $HOME/.config/nvim/tmp/*"
 
-alias ta="tmux attach"
+# Definition des alias git
+alias gst="git status"
 
 # Replace ls with exa
 exa $HOME >/dev/null 2>&1
@@ -40,7 +41,8 @@ if [[ -n $C_SCHOOL ]]; then
     # cd alias
     alias cdc='cd ~/Rendu'
     alias cdl='cd $LIB'
-    alias cds='cd ~/scripts/'
+    alias cds='cd ~/scripts'
+    alias cdpconf='cd ~/.config_personal'
 
     # compil alias
     alias gccl="gcc -I $LIB/includes -L $LIB -lft"

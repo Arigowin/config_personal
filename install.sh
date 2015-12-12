@@ -32,7 +32,7 @@ if [[ "$USER" != "Arigowin" ]] && [[ "$USER" != "dolewski" ]]; then
 fi
 
 if [[ -n $SCHOOL42 ]]; then
-    # create personal script if it doesn't exist
+    # create personal script dir if it doesn't exist
     if [[ ! -e "$PERS_PATH/scripts" ]]; then
         mkdir "$PERS_PATH/scripts"
     fi
