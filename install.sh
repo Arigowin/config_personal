@@ -26,7 +26,7 @@ if [[ -e $CONFIG_VIM ]]; then
         nvim +PlugInstall
 fi
 
-if [[ "$USER" != "Arigowin" ]] && [[ "$USER" != "dolewski" ]]; then
+if [[ "$USER" != "arigowin" ]] && [[ "$USER" != "dolewski" ]]; then
     # remove my git config if it's not me
     sed -i.back '/git/d' $PERS_PATH/ln
 fi
