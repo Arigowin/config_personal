@@ -1,6 +1,7 @@
 #!/bin/bash
 # Definition des alias raccourcis
 alias cdt='cd ~/test/'
+alias cdpconf='cd ~/.config_personal'
 
 # Definition des alias de compilation
 alias gccf="gcc -Wall -Wextra -Werror"
@@ -42,7 +43,6 @@ if [[ -n $C_SCHOOL ]]; then
     alias cdc='cd ~/Rendu'
     alias cdl='cd $LIB'
     alias cds='cd ~/scripts'
-    alias cdpconf='cd ~/.config_personal'
 
     # compil alias
     alias gccl="gcc -I $LIB/includes -L $LIB -lft"
