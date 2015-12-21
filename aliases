@@ -37,7 +37,7 @@ fi
 if [[ -n $C_SCHOOL ]]; then
     # misc
     alias auteur="echo '$USER' > auteur"
-    alias libft="cp -r $LIB .; rm -rf libft/.git"
+    alias libft="cp -r $LIB .; rm -rf libft/.git ; rm -f libft/.gitignore"
 
     # cd alias
     alias cdc='cd ~/Rendu'
