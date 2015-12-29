@@ -58,6 +58,9 @@ if [[ "$USER" == "arigowin" ]]; then
 
     # install
     alias install='sudo apt-get install'
+
+    # gcc -> clang
+    alias gcc='clang'
 fi
 
 
