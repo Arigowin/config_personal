@@ -47,6 +47,9 @@ if [[ -n $C_SCHOOL ]]; then
     # compil alias
     alias gccl="gcc -I $LIB/includes -L $LIB -lft"
     alias gcclf="gcc -Wall -Wextra -Werror -I $LIB/includes -L $LIB -lft"
+
+    # sbcl
+    alias sbcl='sbcl --noinform'
 fi
 
 # Home only alias
