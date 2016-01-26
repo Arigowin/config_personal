@@ -50,6 +50,10 @@ if [[ -n $C_SCHOOL ]]; then
 
     # sbcl
     alias sbcl='sbcl --noinform'
+
+    # my script
+    alias genMakefile="./scripts/genMakefile.sh"
+    alias addHeader="./scripts/addHeader42.sh"
 fi
 
 # Home only alias
