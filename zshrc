@@ -3,6 +3,9 @@ bindkey '^R' history-incremental-search-backward
 bindkey -e
 export LC_ALL=en_US.UTF-8
 export LIB=~/libft
+export INSTALL_ROOT="$HOME/.sbcl"
+export SBCL_HOME="$HOME/.sbcl/lib/sbcl"
+PATH="$PATH:$HOME/.sbcl/bin"
 
 # default editor
 editor=`which nvim 2> /dev/null`
