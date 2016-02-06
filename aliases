@@ -13,6 +13,9 @@ alias purgevim="rm -f $HOME/.config/nvim/tmp/*"
 # Definition des alias git
 alias gst="git status"
 
+# reset git aliases
+alias gu="git add -u ; gst"
+
 # Replace ls with exa
 exa $HOME >/dev/null 2>&1
 if [[ $? == 0 ]]; then
