@@ -23,6 +23,11 @@ else
 fi
 export EDITOR
 
+# default pager
+editor=`which less 2> /dev/null`
+PAGER=$editor
+export PAGER
+
 # Reglage du terminal
 if [ "$SHLVL" -eq 1 ]; then
     TERM=xterm-256color
