@@ -47,4 +47,18 @@ if [[ -n $SCHOOL42 ]]; then
     chmod 700 /tmp/$USER/Caches
     cd $HOME/Library
     ln -s /tmp/$USER/Caches
+
+    # add exa
+    curl -0 https://github.com/ogham/exa/releases/download/v0.4.0/exa-osx-x86_64.zip > $HOME/exa-osx-x86_64.zip
+    unzip $HOME/exa-osx-x86_64.zip
+    mv exa-osx-x86_64 $HOME/bin/exa
+    rm exa-osx-x86_64.zip
+
+    # add font for osx
+    cd
+    git clone https://github.com/powerline/fonts temp_fonts
+    cd temp_fonts
+    mkdir ~/Library/Fonts
+    ./install.sh
+    open /Applications/Font\ Book.app
 fi
