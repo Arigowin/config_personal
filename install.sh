@@ -2,7 +2,7 @@
 
 # vim config
 CONFIG_VIM=$HOME/.config/nvim
-VIM_DEPOT=github.com/Geam/config_neovim.git
+VIM_DEPOT=github.com:Arigowin/config_neovim.git
 
 if [[ -e $CONFIG_VIM ]]
 then
