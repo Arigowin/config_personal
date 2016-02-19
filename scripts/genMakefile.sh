@@ -16,7 +16,7 @@ echo "HPATH =\t\t\$(ROOT)/includes" >> Makefile
 echo "LIBPATH =\t\$(ROOT)/libft" >> Makefile
 echo "LIBHPATH =\t\$(LIBPATH)/includes" >> Makefile
 echo "" >> Makefile
-echo "CFLAGS = -Wall -Werror -Wextra -I \$(HPATH) -I \$(LIBHPATH)" >> Makefile
+echo "CFLAGS = -O3 -Wall -Werror -Wextra -I \$(HPATH) -I \$(LIBHPATH)" >> Makefile
 echo "LIBS = -L \$(LIBPATH) -lft" >> Makefile
 echo "" >> Makefile
 SRCS=$(ls srcs | grep "\.c" | grep -v "\~")
