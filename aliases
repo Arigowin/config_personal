@@ -61,16 +61,19 @@ fi
 
 # Home only alias
 if [[ "$USER" == "arigowin" ]]; then
+    # pacman
+    alias pacman='sudo pacman'
     # update
-    alias update='sudo apt-get update'
-    alias upgrade='sudo apt-get dist-upgrade'
-    alias dupgrade='update && sudo apt-get dist-upgrade'
+    alias update='pacman -Syu'
 
     # install
-    alias install='sudo apt-get install'
+    alias install='pacman -S'
 
     # gcc -> clang
     alias gcc='clang'
+
+    # i3lock
+    alias i3lock='sh ~/.i3/scripts/i3lock.sh'
 fi
 
 
