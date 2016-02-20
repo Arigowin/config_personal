@@ -3,9 +3,6 @@ bindkey '^R' history-incremental-search-backward
 bindkey -e
 export LC_ALL=en_US.UTF-8
 export LIB=~/libft
-export INSTALL_ROOT="$HOME/.sbcl"
-export SBCL_HOME="$HOME/.sbcl/lib/sbcl"
-PATH="$PATH:$HOME/.sbcl/bin"
 
 # default editor
 editor=`which nvim 2> /dev/null`
@@ -40,8 +37,8 @@ bindkey '^[[A' history-beginning-search-backward
 bindkey '^[[B' history-beginning-search-forward
 
 # ctrl + arrow in archlinux
-# bindkey '^[Od' backward-word
-# bindkey '^[Oc' forward-word
+bindkey '^[Od' backward-word
+bindkey '^[Oc' forward-word
 
 # Definition des couleurs
 if [ -f ~/.ls_colors ]; then
