@@ -43,7 +43,7 @@ echo "\$(NAME): \$(OFILES)" >> Makefile
 echo "\t@echo \"\$(NAME) : Building Libft\"" >> Makefile
 echo "\t@\$(MAKE) -C \$(LIBPATH)" >> Makefile
 echo "\t@echo \"\$(NAME) : Building \$@\"" >> Makefile
-echo "\t@\$(CC) \$(CFLAGS) -o \$@ $^ \$(LIBS)" >> Makefile
+echo "\t@\$(CC) \$(CFLAGS) -o \$@ \$^ \$(LIBS)" >> Makefile
 echo "\t@echo \"\\\033[32mDone !\\\033[0m\"" >> Makefile
 echo "" >> Makefile
 echo "\$(OPATH)/%.o: \$(CPATH)/%.c" >> Makefile
