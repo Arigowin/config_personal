@@ -26,29 +26,6 @@ if [[ -e $CONFIG_VIM ]]; then
         nvim +PlugInstall
 fi
 
-if [[ "$USER" == "arigowin" ]]; then
-    # i3 config
-    CONFIG_I3=$HOME/.i3
-    I3_DEPOT=github.com:Arigowin/i3_config.git
-
-    if [[ -e $CONFIG_I3 ]]
-    then
-        rm -rf $CONFIG_I3
-    else
-        CONFIG_PARENT=`dirname $CONFIG_I3`
-        if [[ ! -e $CONFIG_PARENT ]]; then
-            mkdir -p $CONFIG_PARENT
-        fi
-    fi
-
-    git clone "git@$I3_DEPOT" $CONFIG_I3
-    # because some person keep using my personal config instead of doing their own,
-    # they need to use the https version of this repo
-    if [[ "$?" -ne 0 ]]; then
-        git clone "https://$I3_DEPOT" $CONFIG_I3
-    fi
-fi
-
 if [[ "$USER" != "arigowin" ]] && [[ "$USER" != "dolewski" ]]; then
     # remove my git config if it's not me
     sed -i.back '/git/d' $PERS_PATH/ln
