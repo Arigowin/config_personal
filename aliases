@@ -16,6 +16,9 @@ alias gst="git status"
 # reset git aliases
 alias gu="git add -u ; gst"
 
+# tmux alias
+alias ta="tmux a"
+
 # Replace ls with exa
 exa $HOME >/dev/null 2>&1
 if [[ $? == 0 ]]; then
