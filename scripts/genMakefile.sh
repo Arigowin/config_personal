@@ -1,4 +1,26 @@
-#!/bin/zsh
+#!/bin/sh
+
+if [[ ! $1 ]]
+then
+    echo "USAGE : genMakefile <NAME>"
+    echo "        directory 'srcs' and 'includes' existe"
+    exit
+fi
+
+if [[ -e Makefile ]]
+then
+    if [[ -e Makefile_old ]]
+    then
+        rm -rf Makefile_old
+    fi
+    mv Makefile Makefile_old
+fi
+
+if [[ ! -e ./includes || ! -e ./srcs ]]
+then
+    echo "ERROR : directory 'includes' and/or 'srcs' not found !"
+    exit
+fi
 
 NAME=$1
 
@@ -28,7 +50,7 @@ do
         SRC="$SRC$FILE"
         FIRST="done"
     else
-        SRC="$SRC ;\n\t$FILE"
+        SRC="$SRC ;\n\t  $FILE"
     fi
 done
 echo "$SRC" | sed 's/;/\\/g'>> Makefile
@@ -67,3 +89,4 @@ echo "lib.fclean:" >> Makefile
 echo "\t@\$(MAKE) fclean -C \$(LIBPATH)" >> Makefile
 echo "" >> Makefile
 echo "re: fclean all" >> Makefile
+echo "\033[32mDONE !\033[0m"
