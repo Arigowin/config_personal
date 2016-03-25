@@ -37,6 +37,7 @@ fi
 which nvim 2>&1 > /dev/null
 if [[ $? == 0 ]]; then
     alias vim=nvim
+    alias vi=vim
 fi
 
 # School only aliases
@@ -54,12 +55,12 @@ if [[ -n $C_SCHOOL ]]; then
     alias gccl="gcc -I $LIB/includes -L $LIB -lft"
     alias gcclf="gcc -Wall -Wextra -Werror -I $LIB/includes -L $LIB -lft"
 
-    # sbcl
-    alias sbcl='sbcl --noinform'
-
     # my script
     alias genMakefile="sh ~/.config_personal/scripts/genMakefile.sh"
     alias addHeader="sh ~/.config_personal/scripts/addHeader42.sh"
+
+    # norme
+    alias norm="norminette **/*.[hc]"
 fi
 
 # Home only alias
