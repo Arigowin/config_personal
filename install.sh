@@ -2,7 +2,7 @@
 
 # vim config
 CONFIG_VIM=$HOME/.config/nvim
-VIM_DEPOT=github.com:Arigowin/config_neovim.git
+VIM_DEPOT=github.com/Geam/config_neovim.git
 
 if [[ -e $CONFIG_VIM ]]
 then
@@ -20,16 +20,16 @@ git clone "git@$VIM_DEPOT" $CONFIG_VIM
 if [[ "$?" -ne 0 ]]; then
     git clone "https://$VIM_DEPOT" $CONFIG_VIM
 fi
-if [[ -e $CONFIG_VIM ]]; then
-    cd $CONFIG_VIM && \
-        mkdir $CONFIG_VIM/tmp && \
-        nvim +PlugInstall
-fi
+cd $CONFIG_VIM
+mkdir $CONFIG_VIM/tmp
 
-if [[ "$USER" != "arigowin" ]] && [[ "$USER" != "dolewski" ]]; then
+# add neovim python support
+pip3 install --user neovim
+pip2 install --user neovim
+
+if [[ "$USER" != "geam" ]] && [[ "$USER" != "mdelage" ]]; then
     # remove my git config if it's not me
     sed -i.back '/git/d' $PERS_PATH/ln
-
 fi
 
 if [[ -n $SCHOOL42 ]]; then
@@ -37,23 +37,16 @@ if [[ -n $SCHOOL42 ]]; then
     if [[ ! -e "$PERS_PATH/scripts" ]]; then
         mkdir "$PERS_PATH/scripts"
     fi
-
-    # link goindre to Music
-    rm -r "$HOME/Music"
-    ln -s /nfs/sgoinfre/goinfre/Music $HOME/Music
-
-    # cause ~/Library/Caches are always sync even if you don't want..
-    rm -rf $HOME/Library/Caches
-    mkdir -p /tmp/$USER/Caches
-    chmod 700 /tmp/$USER/Caches
-    cd $HOME/Library
-    ln -s /tmp/$USER/Caches
+    $PERS_PATH/osx
+    mkdir $HOME/bin
 
     # add exa
-    curl -0 https://github.com/ogham/exa/releases/download/v0.4.0/exa-osx-x86_64.zip > $HOME/exa-osx-x86_64.zip
-    unzip $HOME/exa-osx-x86_64.zip
+    target=exa-osx-x86_64.zip
+    curl -0 https://the.exa.website/releases/exa-0.4-osx-x86_64.zip > $HOME/$target
+    unzip $HOME/$target
     mv exa-osx-x86_64 $HOME/bin/exa
-    rm exa-osx-x86_64.zip
+    rm $target
+    unset target
 
     # add font for osx
     cd
@@ -62,4 +55,9 @@ if [[ -n $SCHOOL42 ]]; then
     mkdir ~/Library/Fonts
     ./install.sh
     open /Applications/Font\ Book.app
+
+    # add qwerty-fr layout
+    curl -0 http://marin.jb.free.fr/qwerty-fr/qwerty-fr_mac.tgz > $HOME/Downloads/qwerty-fr_mac.tgz
+    mkdir $HOME/Library/Keyborad\ Layouts
+    tar xzf $HOME/Downloads/qwerty-fr_mac.tgz -C $HOME/Library/Keyborad\ Layouts
 fi
