@@ -8,7 +8,7 @@ alias gccf="gcc -Wall -Wextra -Werror"
 alias g++f="g++ -Wall -Wextra -Werror"
 
 # Definition des alias
-alias purgevim="rm -f $HOME/.config/nvim/tmp/*"
+# alias purgevim="rm -f $HOME/.config/nvim/tmp/*"
 
 # Definition des alias git
 alias gst="git status"
@@ -34,11 +34,11 @@ if [[ $? == 0 ]]; then
     alias lt="ll --tree"
 fi
 
-which nvim 2>&1 > /dev/null
-if [[ $? == 0 ]]; then
-    alias vim=nvim
-    alias vi=vim
-fi
+# which nvim 2>&1 > /dev/null
+# if [[ $? == 0 ]]; then
+#     alias vim=nvim
+#     alias vi=vim
+# fi
 
 # School only aliases
 if [[ -n $C_SCHOOL ]]; then

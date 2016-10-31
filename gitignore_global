@@ -36,3 +36,6 @@ a.out
 .nfs*
 Thumbs.db
 ehthumbs.db
+
+#Music
+.m3u

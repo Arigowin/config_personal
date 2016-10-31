@@ -3,6 +3,7 @@ bindkey '^R' history-incremental-search-backward
 bindkey -e
 export LC_ALL=en_US.UTF-8
 export LIB=~/libft
+export DATA=/mnt/DATA/
 
 # default editor
 editor=`which nvim 2> /dev/null`
